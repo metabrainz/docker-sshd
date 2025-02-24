@@ -1,4 +1,4 @@
-FROM metabrainz/base-image
+FROM metabrainz/base-image:jammy-1.0.4-v0.1
 
 RUN apt-get update && \
     apt-get install -y rsync
