@@ -1,6 +1,7 @@
 FROM metabrainz/base-image:jammy-1.0.4-v0.1
 
 RUN apt-get update && \
+    apt-get upgrade -o Dpkg::Options::="--force-confold" -y && \
     apt-get install --no-install-recommends -y rsync && \
     rm -rf /var/lib/apt/lists/*
 

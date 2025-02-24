@@ -25,6 +25,7 @@ image_tag="${date_version}.${build_number}"
 ${DOCKER_CMD} build \
   --build-arg BUILD_DATE="${datestamp}T${timestamp}" \
   --build-arg VCS_REF="${vcs_ref}" \
+  --no-cache \
   --tag "${image_name}:${image_tag}" . \
   2>&1 | tee ./"build-${image_tag}-at-${timestamp}.log"
 
