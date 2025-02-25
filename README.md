@@ -15,8 +15,9 @@ The following environment variables can be set at run time:
 
 ## Maintenance
 
-Since not much changes (beyond `base-image` tag) occur in this repository,
-version tracking is mostly achieved through Docker image tags.
+The script `tag.sh` comes in handy to generate new Git tags,
+those are triggering GitHub Actions to produce new Docker images.
+
 See https://hub.docker.com/r/metabrainz/sshd/tags
 
-The script `push.sh` comes in handy here.
+(Cache is intentionally disabled to get the latest security updates.)
