@@ -1,4 +1,4 @@
-FROM metabrainz/base-image:jammy-1.0.4-v0.1
+FROM metabrainz/base-image:noble-1.0.2-v0.3
 
 # hadolint ignore=DL3008
 RUN apt-get update && \
