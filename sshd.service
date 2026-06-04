@@ -5,7 +5,13 @@ set -e
 SSHD_LISTEN_ADDRESS=${SSHD_LISTEN_ADDRESS:-0.0.0.0}
 SSHD_PORT=${SSHD_PORT:-22}
 
+listen_args=""
+IFS=','
+for addr in $SSHD_LISTEN_ADDRESS; do
+    listen_args="$listen_args -o ListenAddress=$addr"
+done
+
 exec /usr/sbin/sshd \
     -D \
-    -o "ListenAddress=$SSHD_LISTEN_ADDRESS" \
+    $listen_args \
     -o "Port=$SSHD_PORT"
